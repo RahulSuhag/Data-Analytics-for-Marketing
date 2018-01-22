@@ -172,13 +172,3 @@ total_plot <- function(x){
   
 }
 
-Corpus = readLines(choose.files()) #choose corpus
-Cleanedtext_df <-text_clean(Corpus)
-
-
-dtm = dtm_tf(Cleanedtext_df)
-total_plot(dtm)
-
-Plot_BarChart(dtm)
-Plot_Wordc(dtm)
-Plot_distill_cog(dtm)
