@@ -59,7 +59,7 @@ dtm_tf <- function(x_df){
   return(dtm_tf)
 }
 #Function 2b :Gives DTM matrix usign Term Frequency
-dtm_build_tf_idf() <- function(x_df){
+dtm_build_tf_idf <- function(x_df){
   
   require(tidytext)
   library(tidytext)
