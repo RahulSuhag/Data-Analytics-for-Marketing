@@ -102,11 +102,13 @@ Plot_BarChart = function(dtm){
   freq <- sort(colSums(as.matrix(dtm)), decreasing=TRUE)
   wf <- data.frame(word=names(freq), freq=freq)
   # Plot Histogram
- bp <-  subset(wf, freq>15) %>%   
+ bp <-  subset(wf, freq>18) %>%   
     ggplot(aes(word, freq)) +
     geom_bar(stat="identity", fill="red", colour="green") +
     theme(axis.text.x=element_text(angle=45, hjust=3))
-  
+ plot(bp, 
+      layout = layout.kamada.kawai)
+  } 
 
 
 ################ COG
@@ -158,8 +160,7 @@ Plot_distill_cog = function(dtm, # input DTM
   graph = delete.vertices(graph, V(graph)[ degree(graph) == 0 ]) # delete singletons?
   
   plot(graph, 
-       layout = layout.kamada.kawai, 
-       main = title)
+       layout = layout.kamada.kawai)
   
 } # Plot_distill_cog  func ends
 
@@ -179,3 +180,5 @@ dtm = dtm_tf(Cleanedtext_df)
 total_plot(dtm)
 
 Plot_BarChart(dtm)
+Plot_Wordc(dtm)
+Plot_distill_cog(dtm)
