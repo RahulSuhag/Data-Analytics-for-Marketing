@@ -106,9 +106,7 @@ Plot_BarChart = function(dtm){
     ggplot(aes(word, freq)) +
     geom_bar(stat="identity", fill="red", colour="green") +
     theme(axis.text.x=element_text(angle=45, hjust=3))
- plot(bp, 
-      layout = layout.kamada.kawai)
-  } 
+  
 
 
 ################ COG
