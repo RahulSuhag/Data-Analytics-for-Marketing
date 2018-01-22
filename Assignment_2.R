@@ -102,7 +102,7 @@ Plot_BarChart = function(dtm){
   freq <- sort(colSums(as.matrix(dtm)), decreasing=TRUE)
   wf <- data.frame(word=names(freq), freq=freq)
   # Plot Histogram
- bp <-  subset(wf, freq>1) %>%   
+ bp <-  subset(wf, freq>15) %>%   
     ggplot(aes(word, freq)) +
     geom_bar(stat="identity", fill="red", colour="green") +
     theme(axis.text.x=element_text(angle=45, hjust=3))
